@@ -205,6 +205,20 @@ develop custom semantic rules for your organization's specific policies.
 
 Note that before Plan and Apply the "Datacenter" network is the only network available in Meraki Dashboard. 
 
+## Plan and Apply
+
+With the file validated, deploy it for real - both commands run from
+`meraki/`:
+
+```sh
+nac plan
+nac apply
+```
+
+As in the previous step, `nac apply` applies the `plan.tfplan` saved by
+`nac plan` directly - there's no confirmation prompt, so double-check the
+plan output first.
+
 !!! danger "Seeing an overlapping IP addresses error?"
     Since every attendee's branch VPN spokes into the same shared `Datacenter`
     hub, two pods using the same VLAN subnets will collide there. If `nac
@@ -224,20 +238,6 @@ Note that before Plan and Apply the "Datacenter" network is the only network ava
     catch every occurrence is a find-and-replace of `10.1.` with `10.2.`
     across the whole file. Save it, then re-run `nac validate`, `nac plan`,
     and `nac apply`.
-
-## Plan and Apply
-
-With the file validated, deploy it for real - both commands run from
-`meraki/`:
-
-```sh
-nac plan
-nac apply
-```
-
-As in the previous step, `nac apply` applies the `plan.tfplan` saved by
-`nac plan` directly - there's no confirmation prompt, so double-check the
-plan output first.
 
 !!! tip "Verify in the Dashboard"
     Your branch network now exists. In the left-hand menu, click **Network Datacenter** then select your network
