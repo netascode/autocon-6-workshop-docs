@@ -205,6 +205,26 @@ develop custom semantic rules for your organization's specific policies.
 
 Note that before Plan and Apply the "Datacenter" network is the only network available in Meraki Dashboard. 
 
+!!! danger "Seeing an overlapping IP addresses error?"
+    Since every attendee's branch VPN spokes into the same shared `Datacenter`
+    hub, two pods using the same VLAN subnets will collide there. If `nac
+    plan` or `nac apply` fails with an overlapping IP addresses error, open
+    `data/3_networks.nac.yaml` and change **every** `subnet` **and**
+    `appliance_ip` line under `appliance.vlans` (all six VLANs: Data, Voice,
+    Iot, PCI, Guest, Infra) from `10.1.x.x` to `10.2.x.x` - for example:
+
+    ```yaml
+    subnet: 10.1.50.0/24        # becomes 10.2.50.0/24
+    appliance_ip: 10.1.50.1     # becomes 10.2.50.1
+    ```
+
+    Do this for each VLAN - don't stop after the first one. The
+    `local_subnet` entries under `vpn_site_to_site_vpn` use the same
+    `10.1.x.x` addresses and must be updated to match, so the easiest way to
+    catch every occurrence is a find-and-replace of `10.1.` with `10.2.`
+    across the whole file. Save it, then re-run `nac validate`, `nac plan`,
+    and `nac apply`.
+
 ## Plan and Apply
 
 With the file validated, deploy it for real - both commands run from
