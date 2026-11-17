@@ -22,7 +22,19 @@ This lab runs on a shared Windows jump machine with VS Code, WSL, Terraform,
 and Solar-PuTTY already installed - connect to it through WebRDP.
 
 !!! note "WebRDP connection"
-    Instructions for connecting to your jump machine over WebRDP have been sent via email.  
+    1. Go to
+       [ciscodcloud.com/apps/expo/Dk70ow6oshur2y1ds69jvzz7a](https://www.ciscodcloud.com/apps/expo/Dk70ow6oshur2y1ds69jvzz7a)
+       and log in with just your email address - no account or password
+       needed.
+    2. On the session screen, under the **Network** tab, find the
+       **WEB_RDP** row for **win-wkst1** and click its **Open** link.
+
+    <figure markdown="span">
+      ![dCloud session screen - Network tab with the win-wkst1 WEB_RDP row highlighted](assets/expowebrdp.png){ width="90%" }<figcaption>On
+      the session screen's **Network** tab, open the **WEB_RDP** link for
+      **win-wkst1** - not `lin-wkst1`.</figcaption>
+    </figure>
+
     Remember you can pull up the lab guide in a web browser on the WebRDP session. Also remember 
     when using copy and paste from a Mac, use the **control** key instead of the **command** key)
 
