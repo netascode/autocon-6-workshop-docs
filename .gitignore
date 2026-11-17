@@ -1,0 +1,7 @@
+# MkDocs build output and cache
+site/
+.cache/
+
+# Python
+__pycache__/
+.venv/

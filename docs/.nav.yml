@@ -1,0 +1,23 @@
+nav:
+  - Home: index.md
+  - Overview: Intro01_overview.md
+  - Environment Setup: Intro02_environment.md
+  - "Network as Code for Meraki":
+      - "[1] Access Your Meraki Organization": Meraki01_login.md
+      - "[2] Configure Organization Global Settings": Meraki02_org_global.md
+      - "[3] Configure Networks and Appliance Settings": Meraki03_networks.md
+      - "[4] Configure Switching": Meraki04_switching.md
+      - "[5] Configure Wireless": Meraki05_wireless.md
+      - "[6] Configure Templates": Meraki06_templates.md
+      - "[7] Configure Meraki Networks with a CI/CD Pipeline": Meraki07_cicd.md
+  - "Network as Code for IOS-XE":
+      - "[1] SSH to the Lab Devices": IOSXE01_ssh.md
+      - "[2] Configure Devices and Global Settings": IOSXE02_devices_global.md
+      - "[3] Configure Device Groups": IOSXE03_device_groups.md
+      - "[4] Configure Templates": IOSXE04_templates.md
+  - Reference:
+      - Cheat Sheet: CheatSheet.md
+      - Topologies: Topologies.md
+      - Glossary: Glossary.md
+      - References: References.md
+

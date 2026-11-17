@@ -1,0 +1,159 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+<style>
+    /* The home page has no Markdown content: hide the empty main area so the
+       hero below is the only thing on the page. */
+    .md-main {
+        display: none;
+    }
+
+    /* The theme lays the page out as a full-height column; let the hero take
+       the remaining height and centre its content vertically, so no empty
+       band shows underneath. */
+    .tx-container {
+        flex: 1 0 auto;
+        display: flex;
+        align-items: center;
+        padding: 2.5rem 0 3rem;
+        background: var(--md-primary-fg-color);
+    }
+
+    [data-md-color-scheme="default"] .tx-container {
+        background: var(--md-default-bg-color);
+    }
+
+    .tx-container > .md-grid {
+        width: 100%;
+    }
+
+    /* One column, centred on the page, text left-aligned. */
+    .tx-hero {
+        max-width: 26rem;
+        margin: 0 auto;
+        padding: 0 1.2rem;
+        color: var(--md-primary-bg-color);
+    }
+
+    [data-md-color-scheme="default"] .tx-hero {
+        color: var(--md-default-fg-color);
+    }
+
+    .tx-hero h1 {
+        margin: 0 0 1.2rem;
+        color: currentColor;
+        font-weight: 700;
+        line-height: 1.15;
+    }
+
+    .tx-hero h1 .lab-subtitle {
+        display: block;
+        margin-top: .6rem;
+        font-size: .55em;
+        font-weight: 500;
+        opacity: .8;
+        line-height: 1.35;
+    }
+
+    /* ---------- primary button ---------- */
+    .tx-hero .md-button--primary {
+        display: inline-block;
+        margin: 0;
+        padding: 16px 36px;
+        background: linear-gradient(135deg, var(--lab-cyan), var(--lab-blue));
+        color: #fff !important;
+        text-decoration: none !important;
+        border: 0;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: .3px;
+        box-shadow: 0 6px 20px rgba(10, 96, 255, .45);
+        transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .tx-hero .md-button--primary:focus,
+    .tx-hero .md-button--primary:hover {
+        background: linear-gradient(135deg, var(--lab-cyan), var(--lab-blue));
+        color: #fff !important;
+        border: 0;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 26px rgba(10, 96, 255, .55);
+    }
+
+    /* ---------- proctors ---------- */
+    .tx-hero__presenters {
+        margin-top: 1.8rem;
+    }
+
+    .tx-hero__presenters-title {
+        margin: 0 0 .5rem;
+        font-size: .65rem;
+        font-weight: 700;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        opacity: .7;
+    }
+
+    .md-typeset ul.tx-hero__presenters-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .4rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .md-typeset ul.tx-hero__presenters-list li {
+        margin: 0;
+        list-style: none;
+        padding: .25rem .75rem;
+        border: 1px solid rgba(2, 200, 255, .35);
+        border-radius: 999px;
+        font-size: .7rem;
+        line-height: 1.4;
+    }
+
+    @media screen and (min-width: 76.25em) {
+        .md-sidebar--primary {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 30em) {
+        .tx-hero h1 {
+            font-size: 1.4rem;
+        }
+    }
+</style>
+
+<section class="tx-container">
+    <div class="md-grid md-typeset">
+        <div class="tx-hero">
+            <div class="tx-hero__content">
+                <h1>
+                    From Network Change to Code
+                    <span class="lab-subtitle">A Hands-on Network as Code Workshop - Meraki &amp; IOS-XE</span>
+                </h1>
+                <a href="{{ 'Intro01_overview/' | url }}" class="md-button md-button--primary">
+                    Get started →
+                </a>
+
+                <div class="tx-hero__presenters">
+                    <p class="tx-hero__presenters-title">Meet your proctors</p>
+                    <ul class="tx-hero__presenters-list">
+                        <li>Snezana Mitrovic</li>
+                        <li>Daniel Schmidt</li>
+                        <li>Justin Burnette</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+{% block content %} {% endblock %}
+{% block footer %} {% endblock %}
